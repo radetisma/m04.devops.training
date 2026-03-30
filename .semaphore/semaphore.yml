@@ -19,11 +19,14 @@ blocks:
       jobs:
         - name: Build and Push
           commands:
-            - checkout
-            - cd 2-docker-build
-            - docker build -t myapp .
-            - 'docker tag myapp radetisma/myapp:semaphore'
-            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            - 'docker push radetisma/myapp:semaphore'
+            - '#checkout'
+            - '#cd 2-docker-build'
+            - '#docker build -t myapp .'
+            - '#docker tag myapp radetisma/myapp:semaphore'
+            - '#docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+            - docker pull hello-world
+            - 'docker tag hello-world radetisma/hello-world:latest2'
+            - 'docker push radetisma/hello-world:latest2'
+            - '#docker push radetisma/myapp:semaphore'
       secrets:
         - name: DockerHub
