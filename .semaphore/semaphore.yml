@@ -20,5 +20,10 @@ blocks:
         - name: Build and Push
           commands:
             - checkout
+            - cd 2-docker-build
+            - docker build -t myapp .
+            - 'docker tag myapp radetisma/myapp:semaphore'
+            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+            - 'docker push myapp radetisma/myapp:semaphore'
       secrets:
         - name: DockerHub
