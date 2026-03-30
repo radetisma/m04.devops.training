@@ -24,6 +24,6 @@ blocks:
             - docker build -t myapp .
             - 'docker tag myapp radetisma/myapp:semaphore'
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-            - 'docker push myapp radetisma/myapp:semaphore'
+            - 'docker push radetisma/myapp:semaphore'
       secrets:
         - name: DockerHub
