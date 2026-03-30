@@ -26,4 +26,4 @@ blocks:
             - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - 'docker push radetisma/myapp:semaphore2'
       secrets:
-        - name: DockerHub
+        - name: Docker Rade
