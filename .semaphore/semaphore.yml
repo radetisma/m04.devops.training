@@ -23,7 +23,7 @@ blocks:
             - '#cd 2-docker-build'
             - '#docker build -t myapp .'
             - '#docker tag myapp radetisma/myapp:semaphore'
-            - '#docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+            - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
             - docker pull hello-world
             - 'docker tag hello-world radetisma/hello-world:latest2'
             - 'docker push radetisma/hello-world:latest2'
